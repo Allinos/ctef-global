@@ -1,0 +1,67 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<div class="banner"><div class="wrap"><div><h1>Contact us</h1><div class="crumbs"><a href="/">Home</a> › Contact us</div></div><p class="lede">We usually reply within two working days.</p></div></div>
+
+<section class="block tight">
+  <div class="wrap info-row">
+    <div><span class="ico"><svg><use href="#i-pin"/></svg></span><h3>Address</h3><p>CTEF Global Secretariat<br>Guwahati, Assam, India<br>PIN 781001</p></div>
+    <div><span class="ico"><svg><use href="#i-phone"/></svg></span><h3>Phone</h3><p><a href="tel:+911234567890">+91 12345 67890</a><br>Mon–Sat, 10 AM–6 PM</p></div>
+    <div><span class="ico"><svg><use href="#i-mail"/></svg></span><h3>Email</h3><p><a href="mailto:info@ctefglobal.org">info@ctefglobal.org</a><br><a href="mailto:support@ctefglobal.org">support@ctefglobal.org</a></p></div>
+    <div><span class="ico"><svg><use href="#i-globe"/></svg></span><h3>Website</h3><p>www.ctefglobal.org</p></div>
+    <div><span class="ico"><svg><use href="#i-share"/></svg></span><h3>Follow us</h3><p>@ctefglobal on Facebook, Instagram, YouTube and LinkedIn</p></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap card" style="display:grid;grid-template-columns:1fr 1fr;gap:34px;padding:28px" data-stack>
+    <div>
+      <h2 style="font-size:1.4rem">Our location</h2>
+      <div class="map">
+        <div class="tip"><b>CTEF Global Secretariat</b><br><span style="color:#646A7A">Guwahati, Assam</span></div>
+        <svg viewBox="0 0 500 380" role="img" aria-label="Map of central Guwahati showing the CTEF Secretariat near the Brahmaputra">
+          <rect width="500" height="380" fill="#EEF0EC"/>
+          <path d="M0 150 C120 120 220 190 330 150 S470 90 500 100 L500 170 C440 160 380 230 300 230 S120 200 0 250Z" fill="#B9D7EA"/>
+          <circle cx="90" cy="300" r="60" fill="#D6E7D0"/><circle cx="430" cy="300" r="50" fill="#D6E7D0"/><circle cx="60" cy="80" r="40" fill="#D6E7D0"/>
+          <path d="M0 110 L500 175" stroke="#F4C86A" stroke-width="7"/><path d="M200 0 L240 380" stroke="#F4C86A" stroke-width="7"/><path d="M330 0 L260 380" stroke="#fff" stroke-width="5"/><path d="M0 330 L500 260" stroke="#fff" stroke-width="5"/>
+          <text x="300" y="80" font-size="11" fill="#6B7280" font-family="sans-serif">NORTH GUWAHATI</text>
+          <text x="360" y="190" font-size="12" fill="#3B6E91" font-family="sans-serif" font-style="italic">Brahmaputra</text>
+          <text x="80" y="210" font-size="11" fill="#6B7280" font-family="sans-serif">Kamakhya</text>
+          <text x="235" y="265" font-size="15" fill="#1C2030" font-weight="700" font-family="sans-serif">Guwahati</text>
+          <text x="200" y="330" font-size="10" fill="#6B7280" font-family="sans-serif">PALTAN BAZAR</text>
+          <text x="300" y="300" font-size="10" fill="#6B7280" font-family="sans-serif">FANCY BAZAR</text>
+          <g transform="translate(236 222)"><path d="M0 0 C-14 -18 -14 -34 0 -34 C14 -34 14 -18 0 0Z" fill="#A3161D"/><circle cx="0" cy="-23" r="5" fill="#fff"/></g>
+        </svg>
+      </div>
+      <a class="btn block" style="margin-top:14px" href="https://www.google.com/maps/search/?api=1&amp;query=Guwahati%2C+Assam" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Get directions</a>
+      <h3 style="margin-top:28px">Frequently asked</h3>
+      <details class="faq"><summary>How long does membership approval take?</summary><p>Applications are verified within 3–5 working days after we receive your payment details.</p></details>
+      <details class="faq"><summary>Can my school become an institutional member?</summary><p>Yes. Choose the Institutional plan on the membership page. An authorised representative holds the voting right.</p></details>
+      <details class="faq"><summary>How do I start a state chapter?</summary><p>Send us a message with the subject "Start a new state chapter". You'll need at least 15 life members in the state.</p></details>
+    </div>
+    <form method="post" action="/contact">
+      <h2 style="font-size:1.4rem">Send us a message</h2>
+      <div style="display:grid;gap:14px">
+        <div class="field"><label for="cf-name">Full name <span class="req">*</span></label><input class="input" id="cf-name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="cf-email">Email <span class="req">*</span></label><input class="input" id="cf-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="cf-mobile">Mobile number <span class="req">*</span></label><input class="input" id="cf-mobile" name="mobile" inputmode="numeric" maxlength="10" required pattern="[6-9][0-9]{9}"></div>
+        <div class="field"><label for="cf-subject">Subject <span class="req">*</span></label><input class="input" id="cf-subject" name="subject" required></div>
+        <div class="field"><label for="cf-msg">Message <span class="req">*</span></label><textarea class="input" id="cf-msg" name="message" required maxlength="1000" minlength="10"></textarea><span class="hint" id="cfCount">0 / 1000</span></div>
+        <button class="btn block" type="submit"><svg><use href="#i-send"/></svg>Send message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap"><div class="sec-head center"><h2>Connect with us on social media</h2><div class="rule"></div></div>
+    <div class="grid g4 keep2">
+      <div class="card social-card"><div class="sico" style="background:#1877F2"><svg><use href="#i-fb"/></svg></div><h3>Facebook</h3><a href="https://facebook.com" target="_blank" rel="noopener">@ctefglobal</a></div>
+      <div class="card social-card"><div class="sico" style="background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF)"><svg><use href="#i-ig"/></svg></div><h3>Instagram</h3><a href="https://instagram.com" target="_blank" rel="noopener">@ctefglobal</a></div>
+      <div class="card social-card"><div class="sico" style="background:#FF0000"><svg><use href="#i-yt"/></svg></div><h3>YouTube</h3><a href="https://youtube.com" target="_blank" rel="noopener">@ctefglobal</a></div>
+      <div class="card social-card"><div class="sico" style="background:#0A66C2"><svg><use href="#i-in"/></svg></div><h3>LinkedIn</h3><a href="https://linkedin.com" target="_blank" rel="noopener">CTEF Global</a></div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

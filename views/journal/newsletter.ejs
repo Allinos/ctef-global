@@ -1,0 +1,17 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="banner"><div class="wrap"><div><h1><%= newsletter.title %> newsletter</h1><div class="crumbs"><a href="/">Home</a> › <a href="/journal">Journal</a> › <%= newsletter.title %></div></div></div></div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="card" style="padding:26px;max-width:640px;margin:0 auto">
+      <p class="muted"><%= fmtDate(newsletter.published_date, { month: 'long', year: 'numeric' }) %></p>
+      <ul>
+        <% (newsletter.highlights || '').split('\n').filter(Boolean).forEach(h => { %><li><%= h %></li><% }) %>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

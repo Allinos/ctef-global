@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin login · CTEF Global</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin">
+<div class="login-wrap">
+  <div class="login-card">
+    <h1 style="font-size:1.3rem;margin-top:0">CTEF Global admin</h1>
+    <p class="muted" style="font-size:.9rem">Sign in to manage events, journal, gallery and news.</p>
+    <% if (error) { %><div class="toast bad" style="position:static;display:block;max-width:none;margin-bottom:14px"><%= error %></div><% } %>
+    <form method="post" action="/admin/login" style="display:grid;gap:14px">
+      <div class="field"><label for="username">Username</label><input class="input" id="username" name="username" required autofocus></div>
+      <div class="field"><label for="password">Password</label><input class="input" id="password" name="password" type="password" required></div>
+      <button class="btn block" type="submit">Sign in</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

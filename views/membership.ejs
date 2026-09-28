@@ -1,0 +1,84 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<div class="banner"><div class="wrap"><div><h1>Membership</h1><div class="crumbs"><a href="/">Home</a> › Membership</div></div><p class="lede">One-time fees, life-long membership. Choose the plan that fits you or your institution.</p></div></div>
+
+<section class="block" id="plans">
+  <div class="wrap">
+    <div class="sec-head center"><h2>Membership plans</h2><div class="rule"></div></div>
+    <div class="grid g3">
+      <% plans.forEach(p => { %>
+      <div class="plan <%= p.featured ? 'featured' : '' %>">
+        <% if (p.featured) { %><span class="ribbon">Most chosen</span><% } %>
+        <div class="plan-top"><span class="ico" style="background:rgba(255,255,255,.15)"><%- icon(p.icon) %></span><div><h3><%= p.name %></h3><small><%= p.sub %></small></div></div>
+        <div class="price">₹<%= p.price.toLocaleString('en-IN') %> <small>one-time</small></div>
+        <ul><% p.perks.forEach(k => { %><li><%- icon('check') %><%= k %></li><% }) %></ul>
+        <div class="foot"><a class="btn block" href="#apply"><%= p.cta %></a></div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="benefits">
+  <div class="wrap">
+    <div class="sec-head center"><h2>Membership benefits</h2><div class="rule"></div></div>
+    <div class="grid g3">
+      <% benefits.forEach(b => { %><div class="card benefit"><span class="ico soft"><%- icon(b[0]) %></span><div><h3><%= b[1] %></h3><p><%= b[2] %></p></div></div><% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="how">
+  <div class="wrap">
+    <div class="sec-head center"><h2>How to apply</h2><div class="rule"></div></div>
+    <ol class="steps">
+      <li><b>Fill the application</b><span>Choose a plan below</span></li>
+      <li><b>Upload documents</b><span>Photo and ID proof</span></li>
+      <li><b>Make payment</b><span>UPI QR or bank transfer</span></li>
+      <li><b>Add payment proof</b><span>Screenshot or transaction ID</span></li>
+      <li><b>Submit</b><span>Get your application ID</span></li>
+      <li><b>Verification</b><span>Approved by CTEF team</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block alt" id="apply">
+  <div class="wrap" style="display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start" data-stack>
+    <form class="card" method="post" action="/membership/apply" style="padding:28px" enctype="multipart/form-data">
+      <h2 style="font-size:1.5rem">Membership application</h2>
+      <p class="muted" style="font-size:.92rem">Fields marked <span style="color:var(--brand)">*</span> are required.</p>
+      <div class="form-grid">
+        <div class="field span2"><label for="mf-name">Full name <span class="req">*</span></label><input class="input" id="mf-name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="mf-type">Membership type <span class="req">*</span></label><select class="input" id="mf-type" name="type" required><option value="">Select type</option><option value="life">Research scholar / student · ₹500</option><option value="individual">Individual member · ₹1,000</option><option value="institutional">Institutional member · ₹2,500</option></select></div>
+        <div class="field"><label for="mf-dob">Date of birth <span class="req">*</span></label><input class="input" type="date" id="mf-dob" name="dob" required></div>
+        <div class="field"><label for="mf-gender">Gender <span class="req">*</span></label><select class="input" id="mf-gender" name="gender" required><option value="">Select gender</option><option>Female</option><option>Male</option><option>Other</option><option>Prefer not to say</option></select></div>
+        <div class="field"><label for="mf-mobile">Mobile number <span class="req">*</span></label><input class="input" id="mf-mobile" name="mobile" inputmode="numeric" maxlength="10" placeholder="10-digit number" required pattern="[6-9][0-9]{9}" autocomplete="tel"></div>
+        <div class="field span2"><label for="mf-email">Email <span class="req">*</span></label><input class="input" type="email" id="mf-email" name="email" required autocomplete="email"></div>
+        <div class="field"><label for="mf-occ">Occupation / designation <span class="req">*</span></label><input class="input" id="mf-occ" name="occupation" required placeholder="e.g. Assistant Teacher"></div>
+        <div class="field span3"><label for="mf-addr">Address <span class="req">*</span></label><textarea class="input" id="mf-addr" name="address" required style="min-height:70px"></textarea></div>
+        <div class="field"><label for="mf-state">State <span class="req">*</span></label><select class="input" id="mf-state" name="state" required><option value="">Select state</option><% Object.keys(states).forEach(s => { %><option><%= s %></option><% }) %></select></div>
+        <div class="field"><label for="mf-dist">District <span class="req">*</span></label><input class="input" id="mf-dist" name="district" required placeholder="District"></div>
+        <div class="field"><label for="mf-pin">PIN code</label><input class="input" id="mf-pin" name="pin" inputmode="numeric" maxlength="6" pattern="[0-9]{6}"></div>
+        <div class="field span2"><label for="mf-org">Organisation / institution</label><input class="input" id="mf-org" name="org"></div>
+        <div class="field"><label for="mf-photo">Photo <span class="req">*</span></label><input class="input" type="file" id="mf-photo" name="photo" accept="image/png,image/jpeg" required><span class="hint">JPG or PNG, max 2 MB</span></div>
+        <div class="field span2"><label for="mf-docs">ID / address proof <span class="req">*</span></label><input class="input" type="file" id="mf-docs" name="docs" accept=".pdf,image/*" required><span class="hint">PDF or image, max 5 MB</span></div>
+        <div class="field"><label for="mf-txn">UPI / bank transaction ID <span class="req">*</span></label><input class="input" id="mf-txn" name="txn" required placeholder="From your payment app"></div>
+        <div class="field span3"><label class="check"><input type="checkbox" name="agree" required> <span>I confirm the details are correct and agree to abide by the CTEF Constitution &amp; Bye-laws.</span></label></div>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap"><button class="btn" type="submit"><%- icon('send') %>Submit application</button><button class="btn ghost" type="reset">Clear form</button></div>
+    </form>
+    <aside class="card pay">
+      <h3 style="text-align:center;margin-bottom:0">Payment details</h3>
+      <p class="muted" style="text-align:center;font-size:.85rem;margin:4px 0 0">Scan with any UPI app</p>
+      <div class="qr"><img src="/images/legacy/qr-code.jpg" alt="UPI payment QR code" loading="lazy"></div>
+      <div class="copy-row"><span>UPI ID: <b>ctefglobal@upi</b></span></div>
+      <p style="text-align:center;margin:14px 0;font-weight:600;color:var(--ink)">Fee is shown against each membership type above.</p>
+      <h4 style="font-family:var(--sans);font-size:.9rem;color:var(--brand);margin:18px 0 10px">Bank transfer</h4>
+      <dl class="kv"><dt>Account name</dt><dd>CTEF Global</dd><dt>Bank</dt><dd>State Bank of India</dd><dt>Account no.</dt><dd>12345678901</dd><dt>IFSC</dt><dd>SBIN0001234</dd><dt>Branch</dt><dd>Guwahati, Assam</dd></dl>
+      <p class="muted" style="font-size:.8rem;margin:14px 0 0">Enter your transaction ID in the form after paying. Verification takes 3–5 working days.</p>
+    </aside>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

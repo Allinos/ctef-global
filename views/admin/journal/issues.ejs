@@ -1,0 +1,35 @@
+<%- include('../../partials/admin-head') %>
+<%- include('../../partials/admin-nav', { section: 'journal' }) %>
+
+<div class="admin-toolbar">
+  <h1 style="font-size:1.4rem;margin:0">Journal issues</h1>
+  <div style="display:flex;gap:10px">
+    <a class="btn ghost" href="/admin/journal/newsletters">Manage newsletters</a>
+    <a class="btn" href="/admin/journal/issues/new">+ New issue</a>
+  </div>
+</div>
+
+<div class="admin-card" style="padding:0;overflow-x:auto">
+  <table class="admin-table">
+    <thead><tr><th></th><th>Volume / Issue</th><th>Year</th><th>Published</th><th></th></tr></thead>
+    <tbody>
+      <% issues.forEach(s => { %>
+      <tr>
+        <td><% if (s.cover_image) { %><img class="thumb" src="<%= s.cover_image %>" alt=""><% } %></td>
+        <td><%= s.volume %>, <%= s.issue_no %></td>
+        <td><%= s.year %></td>
+        <td><%= fmtDate(s.published_date) %></td>
+        <td style="white-space:nowrap;display:flex;gap:8px">
+          <a class="btn sm ghost" href="/admin/journal/issues/<%= s.id %>/edit">Edit</a>
+          <form method="post" action="/admin/journal/issues/<%= s.id %>/delete" data-confirm="Delete this issue and its articles?">
+            <button class="btn sm ghost" type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+      <% if (!issues.length) { %><tr><td colspan="5" class="muted" style="text-align:center;padding:24px">No issues yet.</td></tr><% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../../partials/admin-foot') %>

@@ -1,0 +1,65 @@
+<%- include('../../partials/admin-head') %>
+<%- include('../../partials/admin-nav', { section: 'journal' }) %>
+
+<h1 style="font-size:1.4rem"><%= issue.id ? 'Edit issue' : 'New issue' %></h1>
+
+<form class="admin-card admin-form" method="post" action="<%= issue.id ? `/admin/journal/issues/${issue.id}` : '/admin/journal/issues' %>" enctype="multipart/form-data">
+  <div class="row2">
+    <div class="field">
+      <label for="volume">Volume <span class="req">*</span></label>
+      <input class="input" id="volume" name="volume" value="<%= issue.volume || '' %>" placeholder="Volume 02" required>
+      <% if (errors.volume) { %><div class="err-msg"><%= errors.volume %></div><% } %>
+    </div>
+    <div class="field">
+      <label for="issue_no">Issue number <span class="req">*</span></label>
+      <input class="input" id="issue_no" name="issue_no" value="<%= issue.issue_no || '' %>" placeholder="Issue 01" required>
+      <% if (errors.issue_no) { %><div class="err-msg"><%= errors.issue_no %></div><% } %>
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="field"><label for="year">Year</label><input class="input" id="year" name="year" type="number" value="<%= issue.year || '' %>"></div>
+    <div class="field">
+      <label for="published_date">Published date <span class="req">*</span></label>
+      <input class="input" id="published_date" name="published_date" type="date" value="<%= issue.published_date || '' %>" required>
+      <% if (errors.published_date) { %><div class="err-msg"><%= errors.published_date %></div><% } %>
+    </div>
+  </div>
+
+  <div class="field"><label for="theme">Theme</label><textarea class="input" id="theme" name="theme"><%= issue.theme || '' %></textarea></div>
+
+  <div class="row2">
+    <div class="field"><label for="issn">ISSN</label><input class="input" id="issn" name="issn" value="<%= issue.issn || '' %>"></div>
+    <div class="field"><label for="pages">Pages</label><input class="input" id="pages" name="pages" value="<%= issue.pages || '' %>" placeholder="120+"></div>
+  </div>
+
+  <div class="field"><label for="language">Language</label><input class="input" id="language" name="language" value="<%= issue.language || 'English' %>"></div>
+
+  <div class="field">
+    <label for="cover_image">Cover image</label>
+    <img class="current-image" src="<%= issue.cover_image || '' %>" alt="" id="currentImg" style="<%= issue.cover_image ? '' : 'display:none' %>">
+    <input class="input" id="cover_image" name="cover_image" type="file" accept="image/*" data-preview="#currentImg">
+  </div>
+
+  <div class="field">
+    <label>Articles</label>
+    <div id="articleRows">
+      <% articles.forEach(a => { %>
+      <div class="article-row">
+        <button type="button" class="icon-btn remove-row" aria-label="Remove article">✕</button>
+        <div class="field"><label>Article title</label><input class="input" name="article_title" value="<%= a.title %>"></div>
+        <div class="field"><label>Authors</label><input class="input" name="article_authors" value="<%= a.authors %>"></div>
+        <div class="field"><label>Abstract</label><textarea class="input" name="article_abstract"><%= a.abstract %></textarea></div>
+      </div>
+      <% }) %>
+    </div>
+    <button type="button" id="addArticleRow" class="btn sm ghost">+ Add article</button>
+  </div>
+
+  <div style="display:flex;gap:10px">
+    <button class="btn" type="submit">Save issue</button>
+    <a class="btn ghost" href="/admin/journal">Cancel</a>
+  </div>
+</form>
+
+<%- include('../../partials/admin-foot') %>

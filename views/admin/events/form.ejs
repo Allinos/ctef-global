@@ -1,0 +1,54 @@
+<%- include('../../partials/admin-head') %>
+<%- include('../../partials/admin-nav', { section: 'events' }) %>
+
+<h1 style="font-size:1.4rem"><%= event.id ? 'Edit event' : 'New event' %></h1>
+
+<form class="admin-card admin-form" method="post" action="<%= event.id ? `/admin/events/${event.id}` : '/admin/events' %>" enctype="multipart/form-data">
+  <div class="field">
+    <label for="title">Title <span class="req">*</span></label>
+    <input class="input" id="title" name="title" value="<%= event.title || '' %>" required>
+    <% if (errors.title) { %><div class="err-msg"><%= errors.title %></div><% } %>
+  </div>
+
+  <div class="row2">
+    <div class="field">
+      <label for="type">Type <span class="req">*</span></label>
+      <select class="input" id="type" name="type" required>
+        <% ['Workshop','Seminar','Conference'].forEach(t => { %><option <%= event.type===t?'selected':'' %>><%= t %></option><% }) %>
+      </select>
+      <% if (errors.type) { %><div class="err-msg"><%= errors.type %></div><% } %>
+    </div>
+    <div class="field">
+      <label for="event_date">Date <span class="req">*</span></label>
+      <input class="input" id="event_date" name="event_date" type="date" value="<%= event.event_date || '' %>" required>
+      <% if (errors.event_date) { %><div class="err-msg"><%= errors.event_date %></div><% } %>
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="field"><label for="event_time">Time</label><input class="input" id="event_time" name="event_time" value="<%= event.event_time || '' %>" placeholder="10:00 AM – 3:00 PM"></div>
+    <div class="field"><label for="place">Place</label><input class="input" id="place" name="place" value="<%= event.place || '' %>"></div>
+  </div>
+
+  <div class="row2">
+    <div class="field"><label for="seats">Seats</label><input class="input" id="seats" name="seats" type="number" min="0" value="<%= event.seats || 0 %>"></div>
+    <div class="field"><label for="fee">Fee</label><input class="input" id="fee" name="fee" value="<%= event.fee || '' %>" placeholder="Free for members, ₹300 for others"></div>
+  </div>
+
+  <div class="field"><label for="description">Description</label><textarea class="input" id="description" name="description" style="min-height:100px"><%= event.description || '' %></textarea></div>
+
+  <div class="field"><label for="outcome_note">Outcome note (shown once the event is past, optional)</label><input class="input" id="outcome_note" name="outcome_note" value="<%= event.outcome_note || '' %>" placeholder="e.g. 42 teachers honoured"></div>
+
+  <div class="field">
+    <label for="image">Photo</label>
+    <img class="current-image" src="<%= event.image || '' %>" alt="" id="currentImg" style="<%= event.image ? '' : 'display:none' %>">
+    <input class="input" id="image" name="image" type="file" accept="image/*" data-preview="#currentImg">
+  </div>
+
+  <div style="display:flex;gap:10px">
+    <button class="btn" type="submit">Save event</button>
+    <a class="btn ghost" href="/admin/events">Cancel</a>
+  </div>
+</form>
+
+<%- include('../../partials/admin-foot') %>

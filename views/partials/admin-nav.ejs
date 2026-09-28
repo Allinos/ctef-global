@@ -1,0 +1,22 @@
+<aside class="admin-sidebar">
+  <a class="brand" href="/admin">CTEF Admin</a>
+  <nav class="admin-nav">
+    <a href="/admin" class="<%= section==='dashboard'?'active':'' %>">Dashboard</a>
+    <a href="/admin/events" class="<%= section==='events'?'active':'' %>">Events</a>
+    <a href="/admin/gallery" class="<%= section==='gallery'?'active':'' %>">Gallery</a>
+    <a href="/admin/news" class="<%= section==='news'?'active':'' %>">News</a>
+    <a href="/admin/journal" class="<%= section==='journal'?'active':'' %>">Journal</a>
+    <a href="/" target="_blank" rel="noopener">View site ↗</a>
+  </nav>
+  <div class="sidebar-foot">
+    <div class="sidebar-user">Signed in as <b><%= adminUsername %></b></div>
+    <form method="post" action="/admin/logout">
+      <button class="btn ghost sm block" type="submit">Log out</button>
+    </form>
+  </div>
+</aside>
+<div class="admin-content">
+<main class="admin-main">
+<% if (typeof flash !== 'undefined' && flash) { %>
+<div class="toast <%= flash.type==='error'?'bad':'ok' %>" style="position:static;display:block;max-width:none;margin-bottom:18px"><%= flash.message %></div>
+<% } %>

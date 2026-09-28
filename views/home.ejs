@@ -1,0 +1,95 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-photo">
+      <img src="/images/legacy/hero.jpg" alt="CTEF Global educators" loading="eager">
+      <div class="badge"><b>41</b><span class="muted" style="font-size:.85rem;line-height:1.3">years of teacher<br>development</span></div>
+    </div>
+    <div>
+      <p class="motto">"Teacher's Welfare is Nation's Welfare"</p>
+      <h1>Connecting educators, <span>transforming education.</span></h1>
+      <p class="lead">CTEF Global is a professional body of teachers, teacher educators and institutions. Since 1985 we have run workshops, seminars, research journals and exchange programmes that help teachers at every level do their best work.</p>
+      <div class="ctas"><a class="btn" href="/membership#apply">Join CTEF Global <%- icon('right') %></a><a class="btn ghost" href="/events">See upcoming events</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="block tight">
+  <div class="wrap">
+    <div class="sec-head"><div><h2>SMART, our guiding principle</h2><p>Five commitments behind every programme we run.</p></div></div>
+    <div class="smart">
+      <div><span class="L">S</span><h3>Specific</h3><p>Working together for targeted, measurable impact.</p></div>
+      <div><span class="L">M</span><h3>Measurable</h3><p>Inspiring educators to reach excellence.</p></div>
+      <div><span class="L">A</span><h3>Achievable</h3><p>Encouraging continuous growth and innovation.</p></div>
+      <div><span class="L">R</span><h3>Relevant</h3><p>Committed to ethical and social responsibility.</p></div>
+      <div><span class="L">T</span><h3>Time-bound</h3><p>Transforming education, transforming lives.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block tight">
+  <div class="wrap">
+    <div class="stats" data-counters>
+      <div><b data-count="14000" data-suffix="+">14000</b><span>Members</span></div>
+      <div><b data-count="2000" data-suffix="+">2000</b><span>Cities</span></div>
+      <div><b data-count="28">28</b><span>State &amp; overseas chapters</span></div>
+      <div><b>1985</b><span>Year of establishment</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap mosaic">
+    <img class="big" src="/images/legacy/mosaic-1.jpg" alt="CTEF Global educators collaborating" loading="lazy">
+    <img src="/images/legacy/mosaic-2.jpg" alt="Delegates listening to a keynote at a CTEF conference" loading="lazy">
+    <img src="/images/legacy/mosaic-3.jpg" alt="Teachers collaborating at a delegate workshop" loading="lazy">
+    <div class="txt">
+      <h2 style="font-size:1.6rem">Empowering educators. Enriching communities.</h2>
+      <p class="muted">Through collaboration, knowledge sharing and practical training, our chapters help teachers build a better future for their students.</p>
+      <a class="link-more" href="/about">Read our story <svg width="14" height="14"><use href="#i-right"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap">
+    <div class="sec-head"><div><h2>Upcoming events</h2><p>Register early. Seats at workshops are limited.</p></div><a class="link-more" href="/events">All events <svg width="14" height="14"><use href="#i-right"/></svg></a></div>
+    <div class="grid g3">
+      <% events.forEach(e => { %><%- include('partials/event-card', { e }) %><% }) %>
+      <% if (!events.length) { %><div class="empty" style="grid-column:1/-1">No upcoming events right now — check back soon.</div><% } %>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap grid g2" style="align-items:start">
+    <div class="card">
+      <div class="sec-head" style="margin-bottom:16px"><h2 style="font-size:1.4rem;margin:0">Latest news</h2><a class="link-more" href="/news">All news</a></div>
+      <div>
+        <% news.forEach(n => { %>
+        <div style="padding:10px 0;border-bottom:1px solid var(--line)">
+          <span class="pill <%= n.category === 'Award' ? 'amber' : n.category === 'Circular' ? 'grey' : '' %>"><%= n.category %></span>
+          <span class="muted" style="font-size:.82rem"><%= fmtDate(n.published_date) %></span>
+          <div style="font-weight:600;color:var(--ink);margin-top:4px"><% if (n.link) { %><a href="<%= n.link %>" style="color:inherit"><%= n.title %></a><% } else { %><%= n.title %><% } %></div>
+        </div>
+        <% }) %>
+        <% if (!news.length) { %><p class="muted">No news yet.</p><% } %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="sec-head" style="margin-bottom:16px"><h2 style="font-size:1.4rem;margin:0">From the journal</h2><a class="link-more" href="/journal">Journal</a></div>
+      <div class="issue" style="grid-template-columns:130px 1fr;gap:18px">
+        <img src="/images/legacy/journal-latest-cover.jpg" alt="Latest CTEF Global Journal cover" loading="lazy">
+        <div><span class="pill">Latest issue</span><h3 style="margin-top:8px">Volume 02, Issue 01 (2025)</h3><p class="muted" style="font-size:.9rem">Innovative teaching practice, educational leadership, policy perspectives and classroom research.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block tight">
+  <div class="wrap"><blockquote class="quote" style="margin:0 auto">"Fostering collaboration, dialogue and pedagogical transformation across all sectors of education."<cite>Dr. Gulab Chaurasia, Founder President</cite></blockquote></div>
+</section>
+
+<%- include('partials/footer') %>

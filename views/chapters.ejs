@@ -1,0 +1,31 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<div class="banner"><div class="wrap"><div><h1>State chapters</h1><div class="crumbs"><a href="/">Home</a> › State chapters</div></div><p class="lede">CTEF Global is growing through its active state chapters. Connect with yours and be part of the mission.</p></div></div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="chapter-tools"><input class="input" id="chQ" placeholder="Search by state" aria-label="Search chapters by state"><span class="muted" id="chInfo"></span></div>
+    <div class="grid g5 keep2" id="chGrid">
+      <% chapters.forEach(c => { %>
+      <div class="card chapter" data-state="<%= c.state %>">
+        <span class="no"><%= c.no %></span>
+        <img src="<%= c.img %>" alt="Landmark in <%= c.state %>" loading="lazy">
+        <h3>CTEF State Chapter <%= c.no %></h3>
+        <div class="dist"><%= c.state %></div>
+        <p><%= c.desc %></p>
+        <details><summary class="btn sm block" style="cursor:pointer;text-align:center">View chapter</summary>
+          <dl class="kv" style="grid-template-columns:auto auto;justify-content:start;margin-top:10px">
+            <dt>Members</dt><dd style="text-align:left"><%= c.members %></dd>
+            <dt>Coordinator email</dt><dd style="text-align:left"><%= c.state.toLowerCase().replace(/\s+/g, '') %>@ctefglobal.org</dd>
+          </dl>
+          <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap"><a class="btn sm" href="/membership#apply">Join this chapter</a><a class="btn sm ghost" href="/contact">Contact chapter</a></div>
+        </details>
+      </div>
+      <% }) %>
+    </div>
+    <div class="callout"><p><span class="ico soft"><%- icon('users') %></span>Can't find your state? Contact us to start a new chapter.</p><a class="btn" href="/contact">Contact us</a></div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

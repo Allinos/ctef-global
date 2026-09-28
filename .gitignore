@@ -1,0 +1,8 @@
+node_modules/
+.env
+public/uploads/*
+!public/uploads/events/
+!public/uploads/gallery/
+!public/uploads/journal/
+!public/uploads/news/
+npm-debug.log*

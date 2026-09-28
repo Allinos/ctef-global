@@ -1,0 +1,31 @@
+<%- include('../../partials/admin-head') %>
+<%- include('../../partials/admin-nav', { section: 'gallery' }) %>
+
+<div class="admin-toolbar">
+  <h1 style="font-size:1.4rem;margin:0">Gallery</h1>
+  <a class="btn" href="/admin/gallery/new">+ New photo</a>
+</div>
+
+<div class="admin-card" style="padding:0;overflow-x:auto">
+  <table class="admin-table">
+    <thead><tr><th></th><th>Caption</th><th>Category</th><th></th></tr></thead>
+    <tbody>
+      <% images.forEach(g => { %>
+      <tr>
+        <td><img class="thumb" src="<%= g.image %>" alt=""></td>
+        <td><%= g.caption %></td>
+        <td><%= g.category %></td>
+        <td style="white-space:nowrap;display:flex;gap:8px">
+          <a class="btn sm ghost" href="/admin/gallery/<%= g.id %>/edit">Edit</a>
+          <form method="post" action="/admin/gallery/<%= g.id %>/delete" data-confirm="Delete this photo?">
+            <button class="btn sm ghost" type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+      <% if (!images.length) { %><tr><td colspan="4" class="muted" style="text-align:center;padding:24px">No photos yet.</td></tr><% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../../partials/admin-foot') %>

@@ -1,0 +1,33 @@
+<%- include('../../partials/admin-head') %>
+<%- include('../../partials/admin-nav', { section: 'journal' }) %>
+
+<div class="admin-toolbar">
+  <h1 style="font-size:1.4rem;margin:0">Newsletters</h1>
+  <div style="display:flex;gap:10px">
+    <a class="btn ghost" href="/admin/journal">Manage issues</a>
+    <a class="btn" href="/admin/journal/newsletters/new">+ New newsletter</a>
+  </div>
+</div>
+
+<div class="admin-card" style="padding:0;overflow-x:auto">
+  <table class="admin-table">
+    <thead><tr><th>Title</th><th>Published</th><th></th></tr></thead>
+    <tbody>
+      <% newsletters.forEach(n => { %>
+      <tr>
+        <td><%= n.title %></td>
+        <td><%= fmtDate(n.published_date) %></td>
+        <td style="white-space:nowrap;display:flex;gap:8px">
+          <a class="btn sm ghost" href="/admin/journal/newsletters/<%= n.id %>/edit">Edit</a>
+          <form method="post" action="/admin/journal/newsletters/<%= n.id %>/delete" data-confirm="Delete this newsletter?">
+            <button class="btn sm ghost" type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+      <% if (!newsletters.length) { %><tr><td colspan="3" class="muted" style="text-align:center;padding:24px">No newsletters yet.</td></tr><% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../../partials/admin-foot') %>

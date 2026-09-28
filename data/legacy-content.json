@@ -1,0 +1,943 @@
+{
+  "events": [
+    {
+      "id": "e1",
+      "type": "Workshop",
+      "title": "Workshop on Digital Learning",
+      "date": "2026-10-10",
+      "time": "10:00 AM – 3:00 PM",
+      "place": "Jorhat, Assam",
+      "img": "ev1",
+      "seats": 60,
+      "desc": "A hands-on workshop on digital tools for modern teaching: interactive whiteboards, free LMS platforms and AI assistants for lesson planning.",
+      "fee": "Free for members, ₹300 for others",
+      "image": "/images/legacy/ev1.jpg"
+    },
+    {
+      "id": "e2",
+      "type": "Seminar",
+      "title": "National Seminar on Quality Education",
+      "date": "2026-10-24",
+      "time": "10:00 AM – 4:00 PM",
+      "place": "Guwahati, Assam",
+      "img": "ev0",
+      "seats": 200,
+      "desc": "Educators, researchers and administrators discuss innovations and best practice in quality school and teacher education.",
+      "fee": "₹200 for members, ₹500 for others",
+      "image": "/images/legacy/ev0.jpg"
+    },
+    {
+      "id": "e3",
+      "type": "Workshop",
+      "title": "Teachers' Empowerment Programme",
+      "date": "2026-11-07",
+      "time": "11:00 AM – 4:00 PM",
+      "place": "Dibrugarh, Assam",
+      "img": "ev2",
+      "seats": 80,
+      "desc": "A full-day programme on classroom leadership, mentoring and wellbeing for early and mid-career teachers.",
+      "fee": "Free for members, ₹300 for others",
+      "image": "/images/legacy/ev2.jpg"
+    },
+    {
+      "id": "e4",
+      "type": "Conference",
+      "title": "International Conference on Teacher Education 2026",
+      "date": "2026-11-21",
+      "time": "9:30 AM – 5:30 PM",
+      "place": "Guwahati, Assam",
+      "img": "gal3",
+      "seats": 400,
+      "desc": "Two days of keynotes, paper presentations and panels with delegates from India and CTEF overseas chapters. Selected papers are published in the CTEF Global Journal.",
+      "fee": "₹1,000 for members, ₹2,000 for others",
+      "image": "/images/legacy/gal3.jpg"
+    },
+    {
+      "id": "e5",
+      "type": "Seminar",
+      "title": "NEP 2020 in the Classroom",
+      "date": "2026-12-05",
+      "time": "10:30 AM – 2:30 PM",
+      "place": "Nagaon, Assam",
+      "img": "gal1",
+      "seats": 150,
+      "desc": "How competency-based learning and the new assessment framework translate into daily classroom practice.",
+      "fee": "Free for all",
+      "image": "/images/legacy/gal1.jpg"
+    },
+    {
+      "id": "e6",
+      "type": "Workshop",
+      "title": "Building Inclusive Classrooms",
+      "date": "2027-01-16",
+      "time": "10:00 AM – 3:00 PM",
+      "place": "Silchar, Assam",
+      "img": "gal5",
+      "seats": 50,
+      "desc": "Practical strategies for supporting learners with diverse needs, including differentiated instruction and universal design for learning.",
+      "fee": "Free for members, ₹300 for others",
+      "image": "/images/legacy/gal5.jpg"
+    },
+    {
+      "id": "e7",
+      "type": "Conference",
+      "title": "North-East Educators' Summit",
+      "date": "2027-02-13",
+      "time": "9:30 AM – 5:00 PM",
+      "place": "Shillong, Meghalaya",
+      "img": "gal4",
+      "seats": 300,
+      "desc": "State chapters from across the North-East share results, plan joint programmes and recognise outstanding teachers.",
+      "fee": "₹500 for members, ₹1,000 for others",
+      "image": "/images/legacy/gal4.jpg"
+    }
+  ],
+  "past": [
+    {
+      "date": "2026-09-05",
+      "title": "Teachers' Day felicitation 2026",
+      "place": "Guwahati, Assam",
+      "note": "42 teachers honoured across 10 district chapters"
+    },
+    {
+      "date": "2026-08-02",
+      "title": "Workshop on Joyful Learning",
+      "place": "Tinsukia, Assam",
+      "note": "75 primary teachers trained"
+    },
+    {
+      "date": "2025-06-28",
+      "title": "Teachers' Empowerment Programme",
+      "place": "Dibrugarh, Assam",
+      "note": "110 participants"
+    },
+    {
+      "date": "2025-06-12",
+      "title": "Workshop on Digital Learning",
+      "place": "Jorhat, Assam",
+      "note": "64 participants"
+    },
+    {
+      "date": "2025-05-25",
+      "title": "National Seminar on Quality Education",
+      "place": "Guwahati, Assam",
+      "note": "38 papers presented"
+    }
+  ],
+  "gallery": [
+    {
+      "src": "/images/legacy/gal0.jpg",
+      "cap": "Delegates at the Global Educators Meet",
+      "cat": "Conferences"
+    },
+    {
+      "src": "/images/legacy/gal1.jpg",
+      "cap": "Keynote session, National Seminar",
+      "cat": "Seminars"
+    },
+    {
+      "src": "/images/legacy/gal2.jpg",
+      "cap": "Educator Delegates Committee Meeting",
+      "cat": "Meetings"
+    },
+    {
+      "src": "/images/legacy/gal3.jpg",
+      "cap": "Plenary hall, International Conference",
+      "cat": "Conferences"
+    },
+    {
+      "src": "/images/legacy/gal4.jpg",
+      "cap": "Organising team, Global Innovate Summit",
+      "cat": "Conferences"
+    },
+    {
+      "src": "/images/legacy/gal5.jpg",
+      "cap": "Round-table discussion, mentors' circle",
+      "cat": "Workshops"
+    },
+    {
+      "src": "/images/legacy/home0.jpg",
+      "cap": "Data-driven teaching keynote",
+      "cat": "Seminars"
+    },
+    {
+      "src": "/images/legacy/home1.jpg",
+      "cap": "Delegate workshop, Day 1",
+      "cat": "Workshops"
+    },
+    {
+      "src": "/images/legacy/home2.jpg",
+      "cap": "Panel at the Global Tech Summit",
+      "cat": "Conferences"
+    },
+    {
+      "src": "/images/legacy/ev1.jpg",
+      "cap": "Digital learning workshop",
+      "cat": "Workshops"
+    },
+    {
+      "src": "/images/legacy/ev2.jpg",
+      "cap": "Teachers' empowerment programme",
+      "cat": "Workshops"
+    },
+    {
+      "src": "/images/legacy/ev0.jpg",
+      "cap": "Seminar audience, Guwahati",
+      "cat": "Seminars"
+    },
+    {
+      "src": "/images/legacy/hero.jpg",
+      "cap": "Chapter meeting session",
+      "cat": "Meetings"
+    }
+  ],
+  "news": [
+    {
+      "d": "2026-09-15",
+      "cat": "Announcement",
+      "t": "Registrations open for the International Conference on Teacher Education 2026",
+      "b": "Delegate and paper registrations for the November conference in Guwahati are now open. Early-bird fees apply until 15 October.",
+      "link": "#/events"
+    },
+    {
+      "d": "2026-09-06",
+      "cat": "Award",
+      "t": "42 teachers honoured on Teachers' Day",
+      "b": "State chapters recognised teachers for innovation, community work and student outcomes at the annual felicitation."
+    },
+    {
+      "d": "2026-08-20",
+      "cat": "Circular",
+      "t": "Call for papers: CTEF Global Journal Volume 03",
+      "b": "Submissions on assessment reform, inclusive education and digital pedagogy are invited until 30 November 2026.",
+      "link": "#/journal/submit"
+    },
+    {
+      "d": "2026-08-01",
+      "cat": "Announcement",
+      "t": "Two new state chapters in Odisha and Kerala",
+      "b": "The chapters will begin their first teacher development programmes in October.",
+      "link": "#/chapters"
+    },
+    {
+      "d": "2026-07-12",
+      "cat": "Circular",
+      "t": "Membership renewal of ID cards",
+      "b": "Members who joined before 2020 can request a new photo ID card through the member login."
+    },
+    {
+      "d": "2026-06-18",
+      "cat": "Award",
+      "t": "CTEF Best Teacher Educator Award: nominations",
+      "b": "Chapters may nominate one teacher educator each. Nominations close on 31 July."
+    }
+  ],
+  "newsletters": [
+    {
+      "title": "September 2026",
+      "date": "2026-09-20",
+      "highlights": [
+        "Teachers' Day felicitation across 10 chapters",
+        "Registrations open for the International Conference",
+        "New chapters in Golaghat and Sonitpur",
+        "Member spotlight: Mrs. Rupjyoti Bora, Jorhat"
+      ]
+    },
+    {
+      "title": "August 2026",
+      "date": "2026-08-28",
+      "highlights": [
+        "Joyful Learning workshop in Tinsukia",
+        "Call for papers for Journal Volume 03",
+        "Membership crosses 14,000"
+      ]
+    },
+    {
+      "title": "July 2026",
+      "date": "2026-07-30",
+      "highlights": [
+        "ID card renewal process",
+        "Monsoon reading list for teachers",
+        "Mentors' circle meets in Guwahati"
+      ]
+    },
+    {
+      "title": "June 2026",
+      "date": "2026-06-28",
+      "highlights": [
+        "Best Teacher Educator Award nominations",
+        "Summer camp highlights from district chapters"
+      ]
+    },
+    {
+      "title": "May 2026",
+      "date": "2026-05-30",
+      "highlights": [
+        "Annual general meeting outcomes",
+        "New board of mentors announced"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "key": "jprev0",
+      "volume": "Volume 01",
+      "issueNo": "Issue 02",
+      "year": "2024",
+      "theme": "Driving global change: interviews with school leaders",
+      "cover": "/images/legacy/jprev0.jpg"
+    },
+    {
+      "key": "jprev1",
+      "volume": "Volume 01",
+      "issueNo": "Issue 01",
+      "year": "2024",
+      "theme": "Pioneering breakthroughs in AI, sustainability and design",
+      "cover": "/images/legacy/jprev1.jpg"
+    },
+    {
+      "key": "jprev2",
+      "volume": "Volume 00",
+      "issueNo": "Issue 02",
+      "year": "2023",
+      "theme": "The digital frontier: navigating AI and sustainability",
+      "cover": "/images/legacy/jprev2.jpg"
+    },
+    {
+      "key": "jprev3",
+      "volume": "Volume 00",
+      "issueNo": "Issue 01",
+      "year": "2023",
+      "theme": "Global reset: education after the pandemic",
+      "cover": "/images/legacy/jprev3.jpg"
+    }
+  ],
+  "articles": [
+    {
+      "title": "Project-based learning in rural Assam: a two-year study",
+      "authors": "Dr. Hitesh Deka & Mrs. Rupjyoti Bora",
+      "abstract": "Tracks learning outcomes in 14 government schools that adopted project-based science units, finding gains in retention and attendance."
+    },
+    {
+      "title": "Teacher leadership and school improvement",
+      "authors": "Prof. Vivek Deshpande",
+      "abstract": "Examines how distributed leadership among teachers affects school culture and student results."
+    },
+    {
+      "title": "AI assistants in lesson planning: promise and caution",
+      "authors": "Dr. Neha Joshi",
+      "abstract": "A survey of 600 teachers on how they use AI tools, with guidelines for responsible classroom use."
+    },
+    {
+      "title": "Mother-tongue instruction in early grades",
+      "authors": "Dr. Farhana Begum",
+      "abstract": "Reviews evidence on multilingual education in the North-East and its implications under NEP 2020."
+    },
+    {
+      "title": "Assessment for learning: moving beyond marks",
+      "authors": "Dr. Meera Iyer",
+      "abstract": "Practical formative assessment techniques tested in Chennai secondary schools."
+    }
+  ],
+  "chapters": [
+    {
+      "no": "01",
+      "state": "Assam",
+      "desc": "Working together to promote quality education and empower educators across the state.",
+      "img": "/images/legacy/dc0.jpg",
+      "members": 1612
+    },
+    {
+      "no": "02",
+      "state": "West Bengal",
+      "desc": "Building a strong network of educators and institutions for a better future through education.",
+      "img": "/images/legacy/dc1.jpg",
+      "members": 988
+    },
+    {
+      "no": "03",
+      "state": "Delhi",
+      "desc": "Promoting collaboration, knowledge sharing and professional growth among educators.",
+      "img": "/images/legacy/dc2.jpg",
+      "members": 841
+    },
+    {
+      "no": "04",
+      "state": "Maharashtra",
+      "desc": "Empowering educators and shaping the future of students through innovation and dedication.",
+      "img": "/images/legacy/dc3.jpg",
+      "members": 1296
+    },
+    {
+      "no": "05",
+      "state": "Tamil Nadu",
+      "desc": "Committed to excellence in education and continuous development of educators.",
+      "img": "/images/legacy/dc4.jpg",
+      "members": 922
+    },
+    {
+      "no": "06",
+      "state": "Karnataka",
+      "desc": "Working for quality education and overall development of society through educators.",
+      "img": "/images/legacy/dc5.jpg",
+      "members": 714
+    },
+    {
+      "no": "07",
+      "state": "Uttar Pradesh",
+      "desc": "Uniting educators to create a positive impact and a better learning environment.",
+      "img": "/images/legacy/dc6.jpg",
+      "members": 1176
+    },
+    {
+      "no": "08",
+      "state": "Rajasthan",
+      "desc": "Encouraging innovation, leadership and professional excellence in education.",
+      "img": "/images/legacy/dc7.jpg",
+      "members": 659
+    },
+    {
+      "no": "09",
+      "state": "Madhya Pradesh",
+      "desc": "Strengthening educator networks and fostering growth through collaboration.",
+      "img": "/images/legacy/dc8.jpg",
+      "members": 743
+    },
+    {
+      "no": "10",
+      "state": "Meghalaya",
+      "desc": "Dedicated to improving education standards and creating better opportunities for all.",
+      "img": "/images/legacy/dc9.jpg",
+      "members": 331
+    }
+  ],
+  "boards": [
+    {
+      "id": "advisors",
+      "title": "Board of advisors",
+      "people": [
+        {
+          "name": "Prof. (Dr.) R.K. Sinha",
+          "role": "Educationist & Advisor",
+          "loc": "New Delhi, Delhi",
+          "focus": "higher education quality assurance",
+          "img": "/images/legacy/p0.jpg",
+          "board": "Board of advisors"
+        },
+        {
+          "name": "Dr. Meera Iyer",
+          "role": "Academic Advisor",
+          "loc": "Chennai, Tamil Nadu",
+          "focus": "assessment and evaluation",
+          "img": "/images/legacy/p1.jpg",
+          "board": "Board of advisors"
+        },
+        {
+          "name": "Prof. Vivek Deshpande",
+          "role": "Policy & Research Advisor",
+          "loc": "Pune, Maharashtra",
+          "focus": "education policy research",
+          "img": "/images/legacy/p2.jpg",
+          "board": "Board of advisors"
+        },
+        {
+          "name": "Dr. Shalini Kapoor",
+          "role": "International Advisor",
+          "loc": "Dubai, UAE",
+          "focus": "international teacher exchange",
+          "img": "/images/legacy/p3.jpg",
+          "board": "Board of advisors"
+        },
+        {
+          "name": "Dr. Ahmed Khan",
+          "role": "Higher Education Advisor",
+          "loc": "Hyderabad, Telangana",
+          "focus": "university leadership",
+          "img": "/images/legacy/p4.jpg",
+          "board": "Board of advisors"
+        },
+        {
+          "name": "Dr. Bishnu Prasad Adhikari",
+          "role": "Overseas Advisor",
+          "loc": "Kathmandu, Nepal",
+          "focus": "South Asian teacher networks",
+          "img": null,
+          "board": "Board of advisors"
+        },
+        {
+          "name": "Prof. Mridula Hazarika",
+          "role": "Research Advisor",
+          "loc": "Dibrugarh, Assam",
+          "focus": "educational psychology",
+          "img": null,
+          "board": "Board of advisors"
+        }
+      ]
+    },
+    {
+      "id": "mentors",
+      "title": "Board of mentors",
+      "people": [
+        {
+          "name": "Dr. Subhash Barman",
+          "role": "Mentor",
+          "loc": "Guwahati, Assam",
+          "focus": "rural school development",
+          "img": "/images/legacy/p5.jpg",
+          "board": "Board of mentors"
+        },
+        {
+          "name": "Dr. Lata Sharma",
+          "role": "Mentor",
+          "loc": "Jaipur, Rajasthan",
+          "focus": "inclusive classrooms",
+          "img": "/images/legacy/p6.jpg",
+          "board": "Board of mentors"
+        },
+        {
+          "name": "Prof. Amitabh Sen",
+          "role": "Mentor",
+          "loc": "Kolkata, West Bengal",
+          "focus": "science pedagogy",
+          "img": "/images/legacy/p7.jpg",
+          "board": "Board of mentors"
+        },
+        {
+          "name": "Dr. Neha Joshi",
+          "role": "Mentor",
+          "loc": "Bhopal, Madhya Pradesh",
+          "focus": "digital learning",
+          "img": "/images/legacy/p8.jpg",
+          "board": "Board of mentors"
+        },
+        {
+          "name": "Dr. Ravi Prakash",
+          "role": "Mentor",
+          "loc": "Lucknow, Uttar Pradesh",
+          "focus": "teacher mentoring",
+          "img": "/images/legacy/p9.jpg",
+          "board": "Board of mentors"
+        },
+        {
+          "name": "Mrs. Junmoni Borah",
+          "role": "Mentor",
+          "loc": "Jorhat, Assam",
+          "focus": "primary school literacy",
+          "img": null,
+          "board": "Board of mentors"
+        },
+        {
+          "name": "Dr. Sanjay Kulkarni",
+          "role": "Mentor",
+          "loc": "Nagpur, Maharashtra",
+          "focus": "mathematics education",
+          "img": null,
+          "board": "Board of mentors"
+        }
+      ]
+    }
+  ],
+  "life": [
+    {
+      "name": "Prof. Bimal Kumar Das",
+      "no": "LM-1001",
+      "state": "Assam",
+      "district": "Kamrup Metro",
+      "role": "Associate Professor, Cotton University",
+      "img": "/images/legacy/lm0.jpg"
+    },
+    {
+      "name": "Dr. Shanti Mukherjee",
+      "no": "LM-1002",
+      "state": "West Bengal",
+      "district": "Kolkata",
+      "role": "Teacher Educator",
+      "img": "/images/legacy/lm1.jpg"
+    },
+    {
+      "name": "Dr. Hitesh Deka",
+      "no": "LM-1003",
+      "state": "Assam",
+      "district": "Dibrugarh",
+      "role": "Principal, B.Ed College",
+      "img": "/images/legacy/lm2.jpg"
+    },
+    {
+      "name": "Prof. A.K. Bhattacharya",
+      "no": "LM-1004",
+      "state": "West Bengal",
+      "district": "Darjeeling",
+      "role": "Professor of Education",
+      "img": "/images/legacy/lm3.jpg"
+    },
+    {
+      "name": "Mrs. Rupjyoti Bora",
+      "no": "LM-1005",
+      "state": "Assam",
+      "district": "Jorhat",
+      "role": "Headmistress, Govt. HS School",
+      "img": null
+    },
+    {
+      "name": "Mr. Pranjal Saikia",
+      "no": "LM-1006",
+      "state": "Assam",
+      "district": "Sivasagar",
+      "role": "Assistant Teacher",
+      "img": null
+    },
+    {
+      "name": "Dr. Kavita Nair",
+      "no": "LM-1007",
+      "state": "Karnataka",
+      "district": "Bengaluru Urban",
+      "role": "Curriculum Designer",
+      "img": null
+    },
+    {
+      "name": "Mr. Dipankar Nath",
+      "no": "LM-1008",
+      "state": "Assam",
+      "district": "Cachar",
+      "role": "Lecturer, DIET Silchar",
+      "img": null
+    },
+    {
+      "name": "Dr. Farhana Begum",
+      "no": "LM-1009",
+      "state": "Assam",
+      "district": "Nagaon",
+      "role": "Teacher Educator",
+      "img": null
+    },
+    {
+      "name": "Mrs. Sunita Patil",
+      "no": "LM-1010",
+      "state": "Maharashtra",
+      "district": "Nagpur",
+      "role": "Senior Teacher",
+      "img": null
+    },
+    {
+      "name": "Dr. Arvind Mishra",
+      "no": "LM-1011",
+      "state": "Uttar Pradesh",
+      "district": "Varanasi",
+      "role": "Reader in Education",
+      "img": null
+    },
+    {
+      "name": "Ms. Tenzing Lhamu",
+      "no": "LM-1012",
+      "state": "Meghalaya",
+      "district": "East Khasi Hills",
+      "role": "Counsellor",
+      "img": null
+    },
+    {
+      "name": "Mr. Bhaskar Gogoi",
+      "no": "LM-1013",
+      "state": "Assam",
+      "district": "Tinsukia",
+      "role": "Assistant Teacher",
+      "img": null
+    },
+    {
+      "name": "Dr. Priya Menon",
+      "no": "LM-1014",
+      "state": "Tamil Nadu",
+      "district": "Chennai",
+      "role": "Associate Professor",
+      "img": null
+    },
+    {
+      "name": "Mrs. Anamika Kalita",
+      "no": "LM-1015",
+      "state": "Assam",
+      "district": "Kamrup Metro",
+      "role": "Primary Teacher",
+      "img": null
+    },
+    {
+      "name": "Dr. Rakesh Gupta",
+      "no": "LM-1016",
+      "state": "Delhi",
+      "district": "New Delhi",
+      "role": "Education Consultant",
+      "img": null
+    }
+  ],
+  "inst": [
+    {
+      "name": "Delhi Public School",
+      "state": "Delhi",
+      "city": "New Delhi",
+      "color": "#1F7A4D",
+      "abbr": "DPS",
+      "kind": "School"
+    },
+    {
+      "name": "Cotton University",
+      "state": "Assam",
+      "city": "Guwahati",
+      "color": "#1E4E8C",
+      "abbr": "CU",
+      "kind": "University"
+    },
+    {
+      "name": "Loyola College",
+      "state": "Tamil Nadu",
+      "city": "Chennai",
+      "color": "#B45309",
+      "abbr": "LC",
+      "kind": "College"
+    },
+    {
+      "name": "Amity University",
+      "state": "Uttar Pradesh",
+      "city": "Noida",
+      "color": "#C99A06",
+      "abbr": "AU",
+      "kind": "University"
+    },
+    {
+      "name": "Jorhat Teachers' Training College",
+      "state": "Assam",
+      "city": "Jorhat",
+      "color": "#A3161D",
+      "abbr": "JTTC",
+      "kind": "College"
+    },
+    {
+      "name": "Dibrugarh University",
+      "state": "Assam",
+      "city": "Dibrugarh",
+      "color": "#5B3E96",
+      "abbr": "DU",
+      "kind": "University"
+    },
+    {
+      "name": "St. Xavier's School",
+      "state": "West Bengal",
+      "city": "Kolkata",
+      "color": "#0E7490",
+      "abbr": "SXS",
+      "kind": "School"
+    },
+    {
+      "name": "DIET Kamrup",
+      "state": "Assam",
+      "city": "Kamrup",
+      "color": "#7A0E13",
+      "abbr": "DIET",
+      "kind": "Institute"
+    },
+    {
+      "name": "Presidency B.Ed College",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "color": "#334155",
+      "abbr": "PBC",
+      "kind": "College"
+    }
+  ],
+  "plans": [
+    {
+      "key": "life",
+      "name": "Research scholars / students",
+      "sub": "One-time payment",
+      "price": 500,
+      "icon": "user",
+      "cta": "Apply for life membership",
+      "perks": [
+        "Lifetime membership",
+        "Membership certificate & ID card",
+        "Listing in member directory",
+        "Free registration for CTEF seminars & programmes",
+        "Free CTEF Journal",
+        "Conference paper submission facility",
+        "Participation in FDPs, orientation & awareness programmes",
+        "Access to CTEF academic resources",
+        "Academic & professional networking opportunities"
+      ]
+    },
+    {
+      "key": "individual",
+      "name": "Individual member",
+      "sub": "One-time payment",
+      "price": 1000,
+      "icon": "users",
+      "featured": true,
+      "cta": "Apply for individual membership",
+      "perks": [
+        "Lifetime membership",
+        "Membership certificate & ID card",
+        "Listing in member directory",
+        "Voting rights",
+        "Free registration for CTEF seminars & programmes",
+        "Free CTEF Journal",
+        "Conference paper submission facility",
+        "Participation in FDPs, orientation & awareness programmes",
+        "Access to CTEF resources"
+      ]
+    },
+    {
+      "key": "institutional",
+      "name": "Institutional member",
+      "sub": "One-time payment",
+      "price": 2500,
+      "icon": "building",
+      "cta": "Apply for institutional membership",
+      "perks": [
+        "Lifetime institutional membership",
+        "Certificate for the institution",
+        "Listing in the institutional directory",
+        "Voting rights through an authorised representative",
+        "Free registration for CTEF seminars & programmes",
+        "Free CTEF Journal",
+        "Conference paper submission facility",
+        "Collaboration & networking opportunities",
+        "Access to CTEF resources",
+        "Opportunity to host CTEF workshops / programmes on campus"
+      ]
+    }
+  ],
+  "benefits": [
+    [
+      "users",
+      "Networking",
+      "Connect with teachers and teacher educators nationally and internationally."
+    ],
+    [
+      "cal",
+      "Free programmes",
+      "Free registration for CTEF seminars and programmes."
+    ],
+    [
+      "book",
+      "Free journal",
+      "Receive the CTEF Journal free of cost."
+    ],
+    [
+      "send",
+      "Conference participation",
+      "Submit papers for CTEF conferences."
+    ],
+    [
+      "cap",
+      "Professional development",
+      "Access FDPs, orientation and training programmes."
+    ],
+    [
+      "hand",
+      "Guidance & counselling",
+      "Opportunities for academic and professional guidance."
+    ],
+    [
+      "share",
+      "Research & knowledge sharing",
+      "Share research and learn from fellow educators."
+    ],
+    [
+      "award",
+      "Recognition",
+      "Opportunities for recognition through CTEF programmes and State Chapter awards."
+    ]
+  ],
+  "objectives": [
+    [
+      "cap",
+      "Conduct Faculty Development Programmes (FDPs) and orientation programmes"
+    ],
+    [
+      "bulb",
+      "Provide training on the transformation of teaching and learning as per NEP 2020"
+    ],
+    [
+      "mega",
+      "Organise awareness and need-based training programmes"
+    ],
+    [
+      "globe",
+      "Promote skill development and environmental awareness"
+    ],
+    [
+      "users",
+      "Provide guidance and counselling for academic and professional development"
+    ],
+    [
+      "share",
+      "Encourage research, knowledge sharing and professional collaboration"
+    ],
+    [
+      "award",
+      "Promote quality and innovative practices in teacher education"
+    ]
+  ],
+  "states": {
+    "Assam": [
+      "Kamrup Metro",
+      "Kamrup",
+      "Dibrugarh",
+      "Jorhat",
+      "Nagaon",
+      "Cachar",
+      "Tinsukia",
+      "Sivasagar",
+      "Dhubri",
+      "Bongaigaon",
+      "Goalpara",
+      "Sonitpur",
+      "Golaghat"
+    ],
+    "West Bengal": [
+      "Kolkata",
+      "Darjeeling",
+      "Howrah",
+      "Jalpaiguri"
+    ],
+    "Delhi": [
+      "New Delhi",
+      "South Delhi",
+      "North Delhi"
+    ],
+    "Maharashtra": [
+      "Mumbai",
+      "Pune",
+      "Nagpur"
+    ],
+    "Tamil Nadu": [
+      "Chennai",
+      "Coimbatore",
+      "Madurai"
+    ],
+    "Karnataka": [
+      "Bengaluru Urban",
+      "Mysuru"
+    ],
+    "Uttar Pradesh": [
+      "Lucknow",
+      "Gautam Buddha Nagar",
+      "Varanasi"
+    ],
+    "Rajasthan": [
+      "Jaipur",
+      "Udaipur"
+    ],
+    "Madhya Pradesh": [
+      "Bhopal",
+      "Indore"
+    ],
+    "Telangana": [
+      "Hyderabad"
+    ],
+    "Meghalaya": [
+      "East Khasi Hills"
+    ],
+    "Overseas": [
+      "Dubai (UAE)",
+      "Kathmandu (Nepal)",
+      "Dhaka (Bangladesh)"
+    ]
+  }
+}

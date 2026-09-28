@@ -1,0 +1,41 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="banner"><div class="wrap"><div><h1>News &amp; announcements</h1><div class="crumbs"><a href="/">Home</a> › News</div></div><p class="lede">Circulars, awards and announcements from CTEF and its chapters.</p></div></div>
+
+<section class="block">
+  <div class="wrap" style="display:grid;grid-template-columns:1fr 300px;gap:30px;align-items:start" data-stack>
+    <div>
+      <div class="tabs">
+        <% ['All','Announcement','Circular','Award'].forEach(c => { %>
+        <a class="tab" aria-selected="<%= c===category %>" href="/news?category=<%= c %><%= q ? '&q='+encodeURIComponent(q) : '' %>"><%= c==='All' ? 'All updates' : c+'s' %></a>
+        <% }) %>
+      </div>
+      <div>
+        <% list.forEach(n => { %>
+        <% const d = new Date(n.published_date + 'T00:00:00'); %>
+        <article class="news-item">
+          <div class="dt"><b><%= d.getDate() %></b><small><%= d.toLocaleString('en', { month: 'short' }) %> <%= d.getFullYear() %></small></div>
+          <div>
+            <span class="pill <%= n.category === 'Award' ? 'amber' : n.category === 'Circular' ? 'grey' : '' %>"><%= n.category %></span>
+            <h3><%= n.title %></h3>
+            <p><%= n.body %></p>
+            <% if (n.link) { %><a class="link-more" href="<%= n.link %>">Learn more</a><% } %>
+          </div>
+        </article>
+        <% }) %>
+        <% if (!list.length) { %><div class="empty">No updates match your search. Try a different keyword.</div><% } %>
+      </div>
+    </div>
+    <aside class="card" style="position:sticky;top:140px">
+      <h3>Search news</h3>
+      <form method="get" action="/news">
+        <input type="hidden" name="category" value="<%= category %>">
+        <input class="input" name="q" value="<%= q %>" placeholder="Search news and announcements" aria-label="Search news">
+        <button class="btn block" style="margin-top:10px" type="submit">Search</button>
+      </form>
+    </aside>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

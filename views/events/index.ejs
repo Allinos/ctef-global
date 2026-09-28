@@ -1,0 +1,60 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="banner" style="padding:0">
+  <div class="wrap" style="align-items:stretch;padding-top:0;padding-bottom:0;display:grid;grid-template-columns:1.2fr 1fr;gap:0" data-stack>
+    <div style="padding:54px 0 50px">
+      <h1>Events</h1>
+      <div class="crumbs" style="margin-bottom:14px"><a href="/">Home</a> › Events</div>
+      <p class="lede">Workshops, seminars and conferences that help educators learn, network and grow.</p>
+      <div style="display:flex;gap:26px;margin-top:22px;flex-wrap:wrap;font-size:.9rem"><span><b>Learn</b><br><span style="opacity:.8">From experts</span></span><span><b>Network</b><br><span style="opacity:.8">With educators</span></span><span><b>Grow</b><br><span style="opacity:.8">And inspire others</span></span></div>
+    </div>
+    <img src="/images/legacy/events-banner.jpg" alt="CTEF Global educators at an event" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+  </div>
+</div>
+
+<section class="block" id="upcoming">
+  <div class="wrap">
+    <div class="sec-head"><div><h2>Upcoming events</h2><p>Filter by type, then open an event to register.</p></div></div>
+    <div class="tabs" role="tablist">
+      <% ['All','Workshop','Seminar','Conference'].forEach(t => { %>
+      <a class="tab" role="tab" aria-selected="<%= t===type %>" href="/events?type=<%= t %>"><%= t==='All' ? 'All events' : t+'s' %></a>
+      <% }) %>
+    </div>
+    <div class="grid g3">
+      <% upcoming.forEach(e => { %><%- include('../partials/event-card', { e }) %><% }) %>
+      <% if (!upcoming.length) { %><div class="empty" style="grid-column:1/-1">No events match this filter yet.</div><% } %>
+    </div>
+  </div>
+</section>
+
+<section class="block alt">
+  <div class="wrap grid g3 types">
+    <div class="card"><span class="ico soft"><svg><use href="#i-users"/></svg></span><div><h3>Workshops</h3><p>Practical, hands-on sessions that sharpen teaching skills.</p><a class="btn sm ghost" href="/events?type=Workshop#upcoming">See workshops</a></div></div>
+    <div class="card"><span class="ico soft"><svg><use href="#i-mega"/></svg></span><div><h3>Seminars</h3><p>Expert talks on current questions in education.</p><a class="btn sm ghost" href="/events?type=Seminar#upcoming">See seminars</a></div></div>
+    <div class="card"><span class="ico soft"><svg><use href="#i-cal"/></svg></span><div><h3>Conferences</h3><p>Large gatherings of educators and thought leaders.</p><a class="btn sm ghost" href="/events?type=Conference#upcoming">See conferences</a></div></div>
+  </div>
+</section>
+
+<section class="block" id="past">
+  <div class="wrap"><div class="sec-head"><div><h2>Past events</h2><p>Highlights from recent programmes.</p></div></div>
+    <div class="rows">
+      <% past.forEach(p => { %>
+      <div><div><b style="color:var(--ink)"><%= p.title %></b><div class="muted" style="font-size:.85rem"><%= p.place %><% if (p.outcome_note) { %> · <%= p.outcome_note %><% } %></div></div><span class="d"><%= fmtDate(p.event_date) %></span><span class="pill grey">Completed</span></div>
+      <% }) %>
+      <% if (!past.length) { %><p class="muted">No past events recorded yet.</p><% } %>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="gallery">
+  <div class="wrap"><div class="sec-head"><div><h2>Event gallery</h2></div><a class="link-more" href="/gallery">Full gallery <svg width="14" height="14"><use href="#i-right"/></svg></a></div>
+    <div class="gallery-grid" data-lb-group>
+      <% gallery.forEach(g => { %>
+      <button data-lb-trigger data-src="<%= g.image %>" data-cap="<%= g.caption %>" aria-label="Open photo: <%= g.caption %>"><img src="<%= g.image %>" alt="<%= g.caption %>" loading="lazy"></button>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

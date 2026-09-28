@@ -1,0 +1,26 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="banner"><div class="wrap"><div><h1><%= event.title %></h1><div class="crumbs"><a href="/">Home</a> › <a href="/events">Events</a> › <%= event.title %></div></div></div></div>
+
+<section class="block">
+  <div class="wrap" style="display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:start" data-stack>
+    <div class="card" style="padding:24px">
+      <img src="<%= event.image || '/images/legacy/hero.jpg' %>" alt="" style="width:100%;height:280px;object-fit:cover;border-radius:10px;margin-bottom:16px">
+      <span class="pill <%= event.type === 'Seminar' ? 'amber' : event.type === 'Conference' ? 'green' : '' %>"><%= event.type %></span>
+      <div class="meta" style="font-size:.93rem;margin-top:10px"><span><%- icon('cal') %><%= fmtDate(event.event_date, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) %></span><span><%- icon('clock') %><%= event.event_time %></span><span><%- icon('pin') %><%= event.place %></span></div>
+      <p style="margin-top:16px"><%= event.description %></p>
+      <p><b>Fee:</b> <%= event.fee %><br><b>Seats:</b> <%= event.seats %></p>
+    </div>
+    <form class="card" method="post" action="/events/<%= event.slug %>/register" style="padding:24px;display:grid;gap:12px">
+      <h3 style="margin:0">Register for this event</h3>
+      <div class="field"><label for="rg-n">Full name <span class="req">*</span></label><input class="input" id="rg-n" name="name" required></div>
+      <div class="field"><label for="rg-e">Email <span class="req">*</span></label><input class="input" id="rg-e" name="email" type="email" required></div>
+      <div class="field"><label for="rg-m">Mobile <span class="req">*</span></label><input class="input" id="rg-m" name="mobile" required pattern="[6-9][0-9]{9}" maxlength="10" inputmode="numeric"></div>
+      <div class="field"><label for="rg-id">Membership no.</label><input class="input" id="rg-id" name="membership_no" placeholder="Optional, e.g. LM-1001"></div>
+      <button class="btn" type="submit">Register now</button>
+    </form>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

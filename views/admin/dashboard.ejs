@@ -1,0 +1,23 @@
+<%- include('../partials/admin-head') %>
+<%- include('../partials/admin-nav', { section: 'dashboard' }) %>
+
+<h1 style="font-size:1.4rem">Dashboard</h1>
+<p class="muted">Manage the content that appears on the public site.</p>
+
+<div class="stat-tiles">
+  <div class="stat-tile"><b><%= counts.events %></b>Events</div>
+  <div class="stat-tile"><b><%= counts.gallery %></b>Gallery photos</div>
+  <div class="stat-tile"><b><%= counts.news %></b>News items</div>
+  <div class="stat-tile"><b><%= counts.issues %></b>Journal issues</div>
+  <div class="stat-tile"><b><%= counts.newsletters %></b>Newsletters</div>
+</div>
+
+<div class="admin-card" style="display:flex;gap:14px;flex-wrap:wrap">
+  <a class="btn" href="/admin/events/new">+ New event</a>
+  <a class="btn ghost" href="/admin/gallery/new">+ New gallery photo</a>
+  <a class="btn ghost" href="/admin/news/new">+ New news item</a>
+  <a class="btn ghost" href="/admin/journal/issues/new">+ New journal issue</a>
+  <a class="btn ghost" href="/admin/journal/newsletters/new">+ New newsletter</a>
+</div>
+
+<%- include('../partials/admin-foot') %>

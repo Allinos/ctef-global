@@ -1,0 +1,42 @@
+<a href="#main" class="sr-only">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="topbar">
+    <a class="brand" href="/" aria-label="CTEF Global home">
+      <img src="/images/legacy/logo.jpg" alt="CTEF Global logo" width="44" height="44" style="border-radius:50%;object-fit:cover">
+      <span><b>CTEF Global</b><small>Council for Teacher Education Foundation · Estd. 1985</small></span>
+    </a>
+    <div class="top-actions">
+      <button class="icon-btn" data-action="theme" aria-label="Toggle dark mode" title="Toggle dark mode"><svg><use href="#i-moon"/></svg></button>
+      <a class="btn ghost hide-m" href="/membership#apply"><svg><use href="#i-user"/></svg><span>Member login</span></a>
+      <a class="btn hide-m" href="/membership#apply">Join now</a>
+      <button class="icon-btn menu-toggle" data-action="menu" aria-label="Open menu" aria-expanded="false" aria-controls="mainnav"><svg><use href="#i-menu"/></svg></button>
+    </div>
+  </div>
+  <nav class="mainnav" id="mainnav" aria-label="Main">
+    <ul>
+      <li><a class="nav-link<%= activeNav==='home'?' active':'' %>" href="/">Home</a></li>
+      <li class="has-dd"><a class="nav-link<%= activeNav==='about'?' active':'' %>" href="/about">About us <svg class="chev"><use href="#i-chev"/></svg></a>
+        <ul class="dropdown"><li><a href="/about#story">Our story</a></li><li><a href="/about#vision">Vision &amp; mission</a></li><li><a href="/about#objectives">Objectives</a></li><li><a href="/about#journey">Our journey</a></li></ul></li>
+      <li class="has-dd"><a class="nav-link<%= activeNav==='stakeholders'?' active':'' %>" href="/stakeholders">Stakeholders <svg class="chev"><use href="#i-chev"/></svg></a>
+        <ul class="dropdown"><li><a href="/stakeholders#advisors">Board of advisors</a></li><li><a href="/stakeholders#mentors">Board of mentors</a></li><li><a href="/stakeholders#life">Life members</a></li><li><a href="/stakeholders#institutions">Institutional members</a></li></ul></li>
+      <li class="has-dd"><a class="nav-link<%= activeNav==='membership'?' active':'' %>" href="/membership">Membership <svg class="chev"><use href="#i-chev"/></svg></a>
+        <ul class="dropdown"><li><a href="/membership#plans">Membership plans</a></li><li><a href="/membership#benefits">Benefits</a></li><li><a href="/membership#how">How to apply</a></li><li><a href="/membership#apply">Application form</a></li></ul></li>
+      <li class="has-dd"><a class="nav-link<%= activeNav==='events'?' active':'' %>" href="/events">Events <svg class="chev"><use href="#i-chev"/></svg></a>
+        <ul class="dropdown"><li><a href="/events#upcoming">Upcoming events</a></li><li><a href="/events#past">Past events</a></li><li><a href="/events#gallery">Event gallery</a></li></ul></li>
+      <li class="has-dd"><a class="nav-link<%= activeNav==='journal'?' active':'' %>" href="/journal">Journal <svg class="chev"><use href="#i-chev"/></svg></a>
+        <ul class="dropdown"><li><a href="/journal#latest">Latest issue</a></li><li><a href="/journal#archive">Previous issues</a></li><li><a href="/journal#newsletter">Newsletter</a></li><li><a href="/journal#submit">Submit a paper</a></li></ul></li>
+      <li class="has-dd"><a class="nav-link<%= activeNav==='news'?' active':'' %>" href="/news">News &amp; announcements <svg class="chev"><use href="#i-chev"/></svg></a>
+        <ul class="dropdown"><li><a href="/news">All updates</a></li><li><a href="/news?category=Announcement">Announcements</a></li><li><a href="/news?category=Circular">Circulars</a></li><li><a href="/news?category=Award">Awards</a></li></ul></li>
+      <li><a class="nav-link<%= activeNav==='gallery'?' active':'' %>" href="/gallery">Gallery</a></li>
+      <li><a class="nav-link<%= activeNav==='chapters'?' active':'' %>" href="/chapters">State chapters</a></li>
+      <li><a class="nav-link<%= activeNav==='contact'?' active':'' %>" href="/contact">Contact us</a></li>
+    </ul>
+    <div class="mobile-actions wrap"><a class="btn ghost" href="/membership#apply"><svg><use href="#i-user"/></svg>Member login</a><a class="btn" href="/membership#apply">Join now</a></div>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1" style="outline:none">
+<% if (flash) { %>
+<div class="wrap" style="padding-top:18px"><div class="toast <%= flash.type==='error'?'bad':'ok' %>" style="position:static;display:block;max-width:none"><%= flash.message %></div></div>
+<% } %>

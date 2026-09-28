@@ -1,0 +1,22 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="banner"><div class="wrap"><div><h1><%= issue.volume %>, <%= issue.issue_no %></h1><div class="crumbs"><a href="/">Home</a> › <a href="/journal">Journal</a> › <%= issue.volume %>, <%= issue.issue_no %></div></div></div></div>
+
+<section class="block">
+  <div class="wrap" style="display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start" data-stack>
+    <img src="<%= issue.cover_image || '/images/legacy/journal-latest-cover.jpg' %>" alt="Cover of <%= issue.volume %>, <%= issue.issue_no %>" style="width:100%;border-radius:10px">
+    <div>
+      <p class="muted"><%= issue.theme %></p>
+      <ul class="facts"><li><b>ISSN:</b> <%= issue.issn || '—' %></li><li><b>Published:</b> <%= fmtDate(issue.published_date, { month: 'long', year: 'numeric' }) %></li><li><b>Language:</b> <%= issue.language %></li><li><b>Pages:</b> <%= issue.pages || '—' %></li></ul>
+      <div class="reader">
+        <% articles.forEach((a, i) => { %>
+        <article><h3><%= i + 1 %>. <%= a.title %></h3><div class="by"><%= a.authors %></div><p><%= a.abstract %></p></article>
+        <% }) %>
+        <% if (!articles.length) { %><p class="muted">No articles listed for this issue yet.</p><% } %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

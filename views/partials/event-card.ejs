@@ -1,0 +1,16 @@
+<%
+  const _d = new Date(e.event_date + 'T00:00:00');
+  const _pillClass = e.type === 'Seminar' ? 'amber' : e.type === 'Conference' ? 'green' : '';
+%>
+<article class="ev-card">
+  <div class="ph">
+    <img src="<%= e.image || '/images/legacy/hero.jpg' %>" alt="" loading="lazy">
+    <div class="date"><b><%= _d.getDate() %></b><small><%= _d.toLocaleString('en', { month: 'short' }).toUpperCase() %> <%= _d.getFullYear() %></small></div>
+  </div>
+  <div class="bd">
+    <span class="pill <%= _pillClass %>" style="align-self:flex-start;margin-bottom:6px"><%= e.type %></span>
+    <h3><%= e.title %></h3>
+    <div class="meta"><span><%- icon('pin') %><%= e.place %></span><span><%- icon('clock') %><%= e.event_time %></span></div>
+    <a class="btn sm ghost" href="/events/<%= e.slug %>">View details</a>
+  </div>
+</article>

@@ -1,0 +1,38 @@
+<%- include('../../partials/admin-head') %>
+<%- include('../../partials/admin-nav', { section: 'events' }) %>
+
+<div class="admin-toolbar">
+  <h1 style="font-size:1.4rem;margin:0">Events</h1>
+  <a class="btn" href="/admin/events/new">+ New event</a>
+</div>
+
+<form class="admin-card" method="get" action="/admin/events" style="display:flex;gap:10px">
+  <input class="input" name="q" value="<%= search %>" placeholder="Search by title">
+  <button class="btn ghost" type="submit">Search</button>
+</form>
+
+<div class="admin-card" style="padding:0;overflow-x:auto">
+  <table class="admin-table">
+    <thead><tr><th></th><th>Title</th><th>Type</th><th>Date</th><th>Place</th><th></th></tr></thead>
+    <tbody>
+      <% events.forEach(e => { %>
+      <tr>
+        <td><% if (e.image) { %><img class="thumb" src="<%= e.image %>" alt=""><% } %></td>
+        <td><%= e.title %></td>
+        <td><%= e.type %></td>
+        <td><%= fmtDate(e.event_date) %></td>
+        <td><%= e.place %></td>
+        <td style="white-space:nowrap;display:flex;gap:8px">
+          <a class="btn sm ghost" href="/admin/events/<%= e.id %>/edit">Edit</a>
+          <form method="post" action="/admin/events/<%= e.id %>/delete" data-confirm="Delete this event?">
+            <button class="btn sm ghost" type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      <% }) %>
+      <% if (!events.length) { %><tr><td colspan="6" class="muted" style="text-align:center;padding:24px">No events yet.</td></tr><% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../../partials/admin-foot') %>

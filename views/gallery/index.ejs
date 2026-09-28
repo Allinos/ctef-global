@@ -1,0 +1,21 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="banner"><div class="wrap"><div><h1>Gallery</h1><div class="crumbs"><a href="/">Home</a> › Gallery</div></div><p class="lede">Moments from our workshops, conferences and chapter meets.</p></div></div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="tabs">
+      <a class="tab" aria-selected="<%= category==='All' %>" href="/gallery">All</a>
+      <% categories.forEach(c => { %><a class="tab" aria-selected="<%= category===c %>" href="/gallery?category=<%= encodeURIComponent(c) %>"><%= c %></a><% }) %>
+    </div>
+    <div class="gallery-grid" data-lb-group>
+      <% images.forEach(g => { %>
+      <button data-lb-trigger data-src="<%= g.image %>" data-cap="<%= g.caption %>" aria-label="Open photo: <%= g.caption %>"><img src="<%= g.image %>" alt="<%= g.caption %>" loading="lazy"><span class="cap"><%= g.caption %></span></button>
+      <% }) %>
+      <% if (!images.length) { %><div class="empty" style="grid-column:1/-1">No photos in this category yet.</div><% } %>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,62 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<div class="banner"><div class="wrap"><div><h1>About us</h1><div class="crumbs"><a href="/">Home</a> › About us</div></div><p class="lede">A leading professional organisation for teachers, teacher educators and education policy makers in India and abroad.</p></div></div>
+
+<section class="block" id="story">
+  <div class="wrap" style="display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:start" data-stack>
+    <div class="prose">
+      <h2>About CTEF Global</h2>
+      <p><b>Council for Teacher Education Foundation (CTEF)</b>, Regd. No. Nagpur/0000403/2019, earlier known as the Council for Teacher Education, was founded in 1985 by Dr. Gulab Chaurasia and fellow educators to strengthen teacher education across India.</p>
+      <p>Our prime objective is to develop competent, resourceful and skilful teaching professionals at every level of education, from lower primary to higher education, and in teacher education in particular. CTEF attained international status with the establishment of overseas chapters.</p>
+      <p>With this objective, CTEF chapters run teacher development programmes (TDP) throughout the year: workshops on pedagogy and technology, seminars on policy and practice, and conferences that bring educators together to share research and experience.</p>
+      <p>The Council is a professional home for teachers, teacher educators, educational administrators, policy makers, research scholars and professionals in education.</p>
+      <p class="leader-note"><b>Leadership:</b> Dr. K.M. Bhandarkar of Nagpur and Prof. Nilima Bhagabati of Guwahati, Assam have led the organisation since 9 November 2009 as National President and International Secretary General respectively.</p>
+    </div>
+    <div class="founder">
+      <img src="/images/legacy/founder.jpg" alt="Dr. Gulab Chaurasia, Founder President" loading="lazy">
+      <div class="cap"><b>Dr. Gulab Chaurasia</b><div class="muted" style="font-size:.9rem">Founder President, CTEF (Estd. 1985)</div><p style="font-family:var(--serif);font-style:italic;margin:10px 0 0">"Teacher's Welfare is Nation's Welfare."</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="vision">
+  <div class="wrap grid g2">
+    <div class="card" style="display:flex;gap:18px"><span class="ico"><svg><use href="#i-eye"/></svg></span><div><h2 style="font-size:1.3rem">Our vision</h2><p>To be a leading global body that transforms teacher education, empowering educators to shape the future of learners everywhere.</p></div></div>
+    <div class="card" style="display:flex;gap:18px"><span class="ico"><svg><use href="#i-target"/></svg></span><div><h2 style="font-size:1.3rem">Our mission</h2><p>To connect, train and support teachers and teacher educators through programmes, research and collaboration that raise the standard of education.</p></div></div>
+  </div>
+</section>
+
+<section class="block" id="objectives">
+  <div class="wrap">
+    <div class="sec-head center"><h2>Key objectives</h2><div class="rule"></div><p>What CTEF sets out to do for teachers and teacher educators.</p></div>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
+      <% objectives.forEach(o => { %>
+      <div class="card obj"><span class="ico soft"><%- icon(o[0]) %></span><p><%= o[1] %></p></div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="journey">
+  <div class="wrap" style="display:grid;grid-template-columns:1fr 1.2fr;gap:40px" data-stack>
+    <div><h2>Our journey</h2><p class="muted">From a small circle of educators in Bhopal to a network spanning India and three overseas chapters.</p>
+      <div class="stats" style="grid-template-columns:1fr 1fr;margin-top:24px" data-counters>
+        <div><b data-count="14000" data-suffix="+">0</b><span>Members</span></div>
+        <div style="border-right:0"><b data-count="2000" data-suffix="+">0</b><span>Cities</span></div>
+        <div><b data-count="28">0</b><span>State chapters</span></div>
+        <div style="border-right:0"><b>1985</b><span>Established</span></div>
+      </div>
+    </div>
+    <ol class="timeline">
+      <li><b>1985</b><div><h3>Council for Teacher Education founded</h3><p>Dr. Gulab Chaurasia and fellow educators start CTE in Bhopal.</p></div></li>
+      <li><b>1990s</b><div><h3>State chapters take root</h3><p>Chapters open across states, running workshops for school teachers.</p></div></li>
+      <li><b>2009</b><div><h3>New national leadership</h3><p>Dr. K.M. Bhandarkar and Prof. Nilima Bhagabati take charge on 9 November.</p></div></li>
+      <li><b>2019</b><div><h3>Registered as CTEF</h3><p>Registered as the Council for Teacher Education Foundation, Nagpur.</p></div></li>
+      <li><b>2023</b><div><h3>CTEF Global Journal launched</h3><p>A peer-reviewed journal on teaching practice and research.</p></div></li>
+      <li><b>2026</b><div><h3>CTEF Global online</h3><p>Membership, events and chapters brought together on one platform.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

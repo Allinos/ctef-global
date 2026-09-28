@@ -1,0 +1,74 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<div class="banner"><div class="wrap"><div><h1>Journal &amp; newsletter</h1><div class="crumbs"><a href="/">Home</a> › Journal</div></div><p class="lede">A peer-reviewed journal on research and practice in education, and a monthly newsletter on CTEF activities.</p></div></div>
+
+<section class="block">
+  <div class="wrap" style="display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start" data-stack>
+    <div>
+      <% if (latest) { %>
+      <div class="card" id="latest" style="padding:26px">
+        <div class="issue">
+          <img src="<%= latest.cover_image || '/images/legacy/journal-latest-cover.jpg' %>" alt="Cover of <%= latest.volume %>, <%= latest.issue_no %>" loading="lazy">
+          <div>
+            <span class="pill">Latest issue</span>
+            <h2 style="font-size:1.5rem;margin-top:10px"><%= latest.volume %>, <%= latest.issue_no %> · <%= latest.year %></h2>
+            <p><%= latest.theme %></p>
+            <ul class="facts"><li><b>ISSN:</b> <%= latest.issn || '—' %></li><li><b>Published:</b> <%= fmtDate(latest.published_date, { month: 'long', year: 'numeric' }) %></li><li><b>Language:</b> <%= latest.language %></li><li><b>Pages:</b> <%= latest.pages %></li></ul>
+            <a class="btn" href="/journal/issue/<%= latest.id %>"><%- icon('book') %>Read online</a>
+          </div>
+        </div>
+      </div>
+      <% } else { %><p class="muted">No journal issue published yet.</p><% } %>
+
+      <div id="archive" style="margin-top:34px">
+        <div class="sec-head" style="margin-bottom:16px"><h2 style="font-size:1.4rem;margin:0">Previous issues</h2></div>
+        <div class="grid g4 keep2">
+          <% previous.forEach(s => { %>
+          <div class="card prev-issue" style="padding:12px">
+            <img src="<%= s.cover_image || '/images/legacy/journal-latest-cover.jpg' %>" alt="Cover of <%= s.volume %> <%= s.issue_no %>" loading="lazy">
+            <b style="color:var(--ink);display:block"><%= s.volume %>, <%= s.year %></b>
+            <span class="muted" style="font-size:.82rem"><%= s.theme %></span>
+            <a class="btn sm ghost block" style="margin-top:8px" href="/journal/issue/<%= s.id %>">View</a>
+          </div>
+          <% }) %>
+          <% if (!previous.length) { %><p class="muted">No previous issues yet.</p><% } %>
+        </div>
+      </div>
+
+      <div class="card" id="submit" style="margin-top:34px">
+        <h2 style="font-size:1.4rem">Submit a paper</h2>
+        <p class="muted" style="font-size:.92rem">We welcome original research, case studies and classroom innovations (3,000–6,000 words). Submissions are double-blind peer reviewed.</p>
+        <form method="post" action="/journal/submit" class="form-grid" style="grid-template-columns:1fr 1fr" enctype="multipart/form-data">
+          <div class="field"><label for="pf-name">Author name <span class="req">*</span></label><input class="input" id="pf-name" name="author" required></div>
+          <div class="field"><label for="pf-email">Email <span class="req">*</span></label><input class="input" id="pf-email" name="email" type="email" required></div>
+          <div class="field span3" style="grid-column:1/-1"><label for="pf-title">Paper title <span class="req">*</span></label><input class="input" id="pf-title" name="title" required></div>
+          <div class="field" style="grid-column:1/-1"><label for="pf-file">Manuscript <span class="req">*</span></label><input class="input" id="pf-file" name="manuscript" type="file" accept=".doc,.docx,.pdf" required><span class="hint">DOC, DOCX or PDF, max 10 MB</span></div>
+          <div style="grid-column:1/-1"><button class="btn" type="submit"><%- icon('send') %>Submit paper</button></div>
+        </form>
+      </div>
+    </div>
+
+    <div id="newsletter">
+      <% if (newsletters[0]) { %>
+      <div class="nl-feature"><div class="env" aria-hidden="true"></div><div><h3><%= newsletters[0].title %> newsletter</h3><p class="muted" style="font-size:.9rem"><%= fmtDate(newsletters[0].published_date, { month: 'long', year: 'numeric' }) %></p><a class="btn sm" href="/journal/newsletter/<%= newsletters[0].id %>">Read latest</a></div></div>
+      <% } %>
+      <div class="card" style="margin-top:20px;padding:0">
+        <h3 style="padding:18px 18px 4px;margin:0;font-size:1.1rem">Previous newsletters</h3>
+        <div class="rows" style="border:0">
+          <% newsletters.slice(1).forEach(n => { %>
+          <div><span style="display:flex;gap:10px;align-items:center"><svg style="width:16px;height:16px;color:var(--brand)"><use href="#i-mail"/></svg><%= n.title %> newsletter</span><span class="d"><%= fmtDate(n.published_date) %></span><a class="btn sm ghost" href="/journal/newsletter/<%= n.id %>">Read</a></div>
+          <% }) %>
+          <% if (newsletters.length <= 1) { %><p class="muted" style="padding:0 18px 14px">No previous newsletters yet.</p><% } %>
+        </div>
+      </div>
+      <form class="card" method="post" action="/journal/subscribe" style="margin-top:20px">
+        <h3 style="font-size:1.1rem;margin-bottom:4px">Subscribe to the newsletter</h3>
+        <p class="muted" style="font-size:.9rem">One email a month. Unsubscribe anytime.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap"><div class="field" style="flex:1;min-width:200px"><input class="input" name="email" type="email" required placeholder="Your email"></div><button class="btn" type="submit">Subscribe</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,29 @@
+<%- include('../../partials/admin-head') %>
+<%- include('../../partials/admin-nav', { section: 'journal' }) %>
+
+<h1 style="font-size:1.4rem"><%= newsletter.id ? 'Edit newsletter' : 'New newsletter' %></h1>
+
+<form class="admin-card admin-form" method="post" action="<%= newsletter.id ? `/admin/journal/newsletters/${newsletter.id}` : '/admin/journal/newsletters' %>">
+  <div class="row2">
+    <div class="field">
+      <label for="title">Title <span class="req">*</span></label>
+      <input class="input" id="title" name="title" value="<%= newsletter.title || '' %>" placeholder="September 2026" required>
+      <% if (errors.title) { %><div class="err-msg"><%= errors.title %></div><% } %>
+    </div>
+    <div class="field">
+      <label for="published_date">Published date <span class="req">*</span></label>
+      <input class="input" id="published_date" name="published_date" type="date" value="<%= newsletter.published_date || '' %>" required>
+      <% if (errors.published_date) { %><div class="err-msg"><%= errors.published_date %></div><% } %>
+    </div>
+  </div>
+  <div class="field">
+    <label for="highlights">Highlights (one per line)</label>
+    <textarea class="input" id="highlights" name="highlights" style="min-height:120px"><%= newsletter.highlights || '' %></textarea>
+  </div>
+  <div style="display:flex;gap:10px">
+    <button class="btn" type="submit">Save newsletter</button>
+    <a class="btn ghost" href="/admin/journal/newsletters">Cancel</a>
+  </div>
+</form>
+
+<%- include('../../partials/admin-foot') %>

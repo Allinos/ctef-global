@@ -1,0 +1,81 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<div class="banner"><div class="wrap"><div><h1>Stakeholders</h1><div class="crumbs"><a href="/">Home</a> › Stakeholders</div></div><div class="banner-note"><b>Our strength lies in our people.</b><br>Meet the leaders and members guiding CTEF Global.</div></div></div>
+
+<section class="block">
+  <div class="wrap">
+    <% boards.forEach((b, bi) => { %>
+    <div class="board" id="<%= b.id %>">
+      <div class="board-head"><h2><%= b.title %></h2><div class="arrows"><button data-scroll="<%= bi %>" data-dir="-1" aria-label="Previous"><%- icon('left') %></button><button data-scroll="<%= bi %>" data-dir="1" aria-label="Next"><%- icon('right') %></button></div></div>
+      <div class="scroller" id="sc<%= bi %>">
+        <% b.people.forEach(p => { %>
+        <div class="person">
+          <% if (p.img) { %><img class="avatar" src="<%= p.img %>" alt="Photo of <%= p.name %>"><% } else { %><div class="avatar init"><%= initials(p.name) %></div><% } %>
+          <h3><%= p.name %></h3><div class="role"><%= p.role %></div><div class="loc"><%= p.loc %></div>
+          <details><summary class="btn sm ghost" style="cursor:pointer"><%- icon('user') %>View profile</summary><p class="muted" style="font-size:.85rem;margin-top:8px"><%= bio(p.name, p.focus) %></p></details>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</section>
+
+<section class="block alt" id="life">
+  <div class="wrap">
+    <div class="sec-head"><div><h2>Life members</h2><p>Search the directory by state, district, name or membership number.</p></div></div>
+    <div class="split">
+      <div>
+        <div class="results-info" id="lmInfo"></div>
+        <div class="grid g3" id="lmGrid">
+          <% life.forEach(m => { %>
+          <div class="person" data-state="<%= m.state %>" data-district="<%= m.district %>" data-name="<%= m.name %>" data-no="<%= m.no %>">
+            <% if (m.img) { %><img class="avatar" src="<%= m.img %>" alt="Photo of <%= m.name %>" style="width:76px;height:76px"><% } else { %><div class="avatar init" style="width:76px;height:76px"><%= initials(m.name) %></div><% } %>
+            <h3><%= m.name %></h3><div class="pill grey" style="margin:4px 0"><%= m.no %></div><div class="loc"><%= m.district %>, <%= m.state %></div>
+            <p class="muted" style="font-size:.85rem"><%= m.role %></p>
+          </div>
+          <% }) %>
+        </div>
+        <div style="text-align:center;margin-top:18px"><button class="btn ghost" id="lmMore">Show more members</button></div>
+      </div>
+      <form class="search-panel" id="lmForm" onsubmit="return false">
+        <h3>Search life members</h3>
+        <div class="in">
+          <select class="input" id="lmState" aria-label="State"><option value="">All states</option><% Object.keys(states).forEach(s => { %><option><%= s %></option><% }) %></select>
+          <select class="input" id="lmDist" aria-label="District"><option value="">Select state first</option></select>
+          <input class="input" id="lmQ" placeholder="Name or membership no." aria-label="Name or membership number">
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="institutions">
+  <div class="wrap">
+    <div class="sec-head"><div><h2>Institutional members</h2><p>Schools, colleges and universities that are part of CTEF.</p></div></div>
+    <div class="split">
+      <div>
+        <div class="results-info" id="imInfo"></div>
+        <div class="grid g3" id="imGrid">
+          <% inst.forEach(m => { %>
+          <div class="person" data-state="<%= m.state %>" data-name="<%= m.name %>">
+            <div class="inst-logo" style="background:<%= m.color %>"><%= m.abbr %></div>
+            <h3><%= m.name %></h3><div class="role" style="font-weight:500"><%= m.kind %></div><div class="loc"><%= m.city %>, <%= m.state %></div>
+          </div>
+          <% }) %>
+        </div>
+      </div>
+      <form class="search-panel" id="imForm" onsubmit="return false">
+        <h3>Search institutions</h3>
+        <div class="in">
+          <select class="input" id="imState" aria-label="State"><option value="">All states</option><% [...new Set(inst.map(i=>i.state))].sort().forEach(s => { %><option><%= s %></option><% }) %></select>
+          <input class="input" id="imQ" placeholder="Institution name" aria-label="Institution name">
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>window.STATES_DATA = <%- JSON.stringify(states) %>;</script>
+<%- include('partials/footer') %>
